@@ -5,10 +5,9 @@ import Footer from './components/footer.jsx';
 import Gallery from './components/gallery.jsx'
 
 import axios from 'axios';
-import User from './components/models/User.js'
 
 
-const pathToMedia='';
+const pathToMedia='https://radiant-badlands-50472.herokuapp.com/media/';
 class App extends Component {
    
    state = { 
@@ -29,7 +28,7 @@ class App extends Component {
         console.log(res);
         const media = res.data;
         this.setState({videos:media});
-        console.log(this.state.videos);
+        console.log('VIDEOS',this.state.videos);
       })
   }
 
