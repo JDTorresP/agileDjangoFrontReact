@@ -11,10 +11,13 @@ class Gallery extends Component {
         super(props);
         this.state = { 
             swi: window.innerWidth,
-            categories: []
+            
          };
     }
 
+    
+
+    
     getEmbebedURL= (url) => {
         let res;
         if(!url.includes('youtube')){

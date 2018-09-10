@@ -55,7 +55,8 @@ class Header extends Component {
             country:'',
             username:'',
             email:'',
-            city:''
+            city:'',
+         
          };
     }
 
@@ -101,6 +102,10 @@ class Header extends Component {
             this.handleClose();
         }
         })}
+
+   
+    
+
     componentWillMount(){
         axios.get(pathToIsLoggued)
         .then(res => {
@@ -183,14 +188,21 @@ class Header extends Component {
                     <ListItemIcon>
                         <VideocamIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Gallery" />
+                    <ListItemText onClick={this.props.unfilter}primary="Gallery" />
+                    </ListItem>
+                     <ListItem button>
+                    <ListItemIcon>
+                        <VideocamIcon />
+                    </ListItemIcon>
+                    <ListItemText onClick={this.props.filterV}primary="Videos" />
                     </ListItem>
                     <ListItem button>
                     <ListItemIcon>
                         <VideocamIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Audios" />
+                    <ListItemText onClick={this.props.filter}primary="Audios" />
                     </ListItem>
+                    
                 </List>
             </div>
         );
